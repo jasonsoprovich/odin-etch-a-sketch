@@ -10,21 +10,24 @@ document.body.appendChild(divContainer);
 function createGrid() {
   const divGrid = document.createElement('div');
   divGrid.className = 'divGrid';
+  divGrid.addEventListener('mouseover', () => {
+    divGrid.style.backgroundColor = 'pink';
+  });
   divContainer.appendChild(divGrid);
 }
 //   For userInput or 16 iterations:
+//     Create square divs to create a grid
+//     Assign classes to all divs
+//     Append to div container
 let gridSize = (16*16);
 for (let i = 0; i < gridSize; i++) {
   createGrid();
 }
-
-//     Create square divs to create a grid
-//     Assign classes to all divs
-//     Append to div container
 			
 // Add event listeners to div grid class for hover state
 //   On mouseover change div background color
 //   On mouseout revert div background color
+
 
 // Declare function to reset drawing board and create new customGrid()
 //   Remove all existing grid divs in the div container
