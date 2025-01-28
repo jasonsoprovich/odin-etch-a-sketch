@@ -13,7 +13,7 @@ function createGrid() {
   divContainer.appendChild(divGrid);
 }
 //   For userInput or 16 iterations:
-let gridSize = 16;
+let gridSize = (16*16);
 for (let i = 0; i < gridSize; i++) {
   createGrid();
 }
