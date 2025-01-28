@@ -1,10 +1,23 @@
 // Create a div container and append to html body
+const divContainer = document.createElement('div');
+divContainer.className = 'divContainer';
+document.body.appendChild(divContainer);
 
 // Add CSS code to assign Flexbox properties
 //   Set maximum div container size to 960px
 	
 // Declare function to build 16x16 div grid createGrid()
+function createGrid() {
+  const divGrid = document.createElement('div');
+  divGrid.className = 'divGrid';
+  divContainer.appendChild(divGrid);
+}
 //   For userInput or 16 iterations:
+let gridSize = 16;
+for (let i = 0; i < gridSize; i++) {
+  createGrid();
+}
+
 //     Create square divs to create a grid
 //     Assign classes to all divs
 //     Append to div container
