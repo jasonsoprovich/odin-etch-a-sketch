@@ -6,7 +6,6 @@ document.body.appendChild(divContainer);
 // Add CSS code to assign Flexbox properties
 //   Set maximum div container size to 960px
 	
-// Declare function to build 16x16 div grid createGrid()
 function createGrid() {
   const divGrid = document.createElement('div');
   divGrid.className = 'divGrid';
@@ -15,19 +14,41 @@ function createGrid() {
   });
   divContainer.appendChild(divGrid);
 }
-//   For userInput or 16 iterations:
-//     Create square divs to create a grid
-//     Assign classes to all divs
-//     Append to div container
-let gridSize = (16*16);
-for (let i = 0; i < gridSize; i++) {
-  createGrid();
-}
-			
-// Add event listeners to div grid class for hover state
-//   On mouseover change div background color
-//   On mouseout revert div background color
 
+const createGridButton = document.createElement('button');
+createGridButton.textContent = 'Create Grid';
+createGridButton.className = 'gridButton';
+document.lastElementChild.appendChild(createGridButton);
+
+createGridButton.addEventListener('click', getUserInput);
+
+let userInput = null;
+
+function getUserInput() {
+  userInput = prompt('Enter a number between 1 and 100: ');
+  
+  if (userInput < 0 ||
+      userInput > 100 ||
+      userInput === '' ||
+      userInput === null ||
+      isNaN(userInput)
+    ) {
+    userInput = prompt('Enter a number between 1 and 100: ');
+    return null;
+  
+  } else {
+    // return Math.floor(userInput);
+    newGrid(userInput);
+  }
+}
+
+function newGrid(userInput) {
+  let gridSize = userInput;
+  
+  for (let i = 0; i < gridSize; i++) {
+    createGrid();
+  }
+}
 
 // Declare function to reset drawing board and create new customGrid()
 //   Remove all existing grid divs in the div container
