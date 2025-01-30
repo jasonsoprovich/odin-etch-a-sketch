@@ -26,24 +26,30 @@ let userInput = null;
 
 function getUserInput() {
   userInput = prompt('Enter a number between 1 and 100: ');
-  
-  if (userInput < 0 ||
-      userInput > 100 ||
-      userInput === '' ||
-      userInput === null ||
-      isNaN(userInput)
-    ) {
-    userInput = prompt('Enter a number between 1 and 100: ');
-    return null;
-  
-  } else {
-    // return Math.floor(userInput);
-    newGrid(userInput);
+  let validInput = false;
+
+  while (validInput === false) {
+    
+    if (userInput === null) {
+      return null;
+    }
+    
+    userInput = parseFloat(userInput);
+
+    if (userInput <= 0 ||
+        userInput > 100 ||
+        isNaN(userInput)
+      ) {
+      userInput = prompt('Enter a number between 1 and 100: ');
+      } else {
+      validInput = true;
+      newGrid(Math.floor(userInput));
+    }
   }
 }
 
 function newGrid(userInput) {
-  let gridSize = userInput;
+  let gridSize = userInput ** 2;
   
   for (let i = 0; i < gridSize; i++) {
     createGrid();
