@@ -1,23 +1,36 @@
-.body {
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .divContainer {
+  box-sizing: border-box;
   background-color: #fff;
-  width: 500px;
+  width: 960px;
   aspect-ratio: 1;
   display: flex;
   flex-wrap: wrap;
   border-style: solid;
   border-color: #333333;
   border-width: 1.5px;
-  margin: auto;
 }
 
 .divGrid {
   box-sizing: border-box;
   aspect-ratio: 1;
+}
+
+.gridButton {
+  box-sizing: border-box;
+  background-color: rgb(35, 148, 131);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 960px;
 }
