@@ -49,7 +49,6 @@ function getUserInput() {
 }
 
 function clearGrid() {
-  const divContainer = document.getElementsByClassName('divContainer');
   divContainer.innerHTML = '';
 }
 
