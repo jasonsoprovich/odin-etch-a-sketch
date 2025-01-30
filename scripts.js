@@ -48,12 +48,17 @@ function getUserInput() {
   }
 }
 
+function clearGrid() {
+  const divContainer = document.getElementsByClassName('divContainer');
+  divContainer.innerHTML = '';
+}
+
 function newGrid(userInput) {
   let gridSplit = 100 / userInput; //100% grid container / userInput
   let gridSize = userInput ** 2;
-  // console.log(gridSplit, 'split');
-  // console.log(gridSize, 'size');
   
+  clearGrid();
+
   for (let i = 0; i < gridSize; i++) {
     createGrid();
   }
