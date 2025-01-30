@@ -49,10 +49,18 @@ function getUserInput() {
 }
 
 function newGrid(userInput) {
+  let gridSplit = 100 / userInput; //100% grid container / userInput
   let gridSize = userInput ** 2;
+  // console.log(gridSplit, 'split');
+  // console.log(gridSize, 'size');
   
   for (let i = 0; i < gridSize; i++) {
     createGrid();
+  }
+
+  const cells = document.getElementsByClassName('divGrid');
+  for (let cell of cells) {
+    cell.style.flex = '1 1 '+ gridSplit + '%';
   }
 }
 
