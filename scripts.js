@@ -1,10 +1,13 @@
-// Create a div container and append to html body
+const createGridButton = document.createElement('button');
+createGridButton.textContent = 'Create Grid';
+createGridButton.className = 'gridButton';
+document.body.appendChild(createGridButton);
+
+createGridButton.addEventListener('click', getUserInput);
+
 const divContainer = document.createElement('div');
 divContainer.className = 'divContainer';
 document.body.appendChild(divContainer);
-
-// Add CSS code to assign Flexbox properties
-//   Set maximum div container size to 960px
 	
 function createGrid() {
   const divGrid = document.createElement('div');
@@ -15,12 +18,9 @@ function createGrid() {
   divContainer.appendChild(divGrid);
 }
 
-const createGridButton = document.createElement('button');
-createGridButton.textContent = 'Create Grid';
-createGridButton.className = 'gridButton';
-document.lastElementChild.appendChild(createGridButton);
-
-createGridButton.addEventListener('click', getUserInput);
+function clearGrid() {
+  divContainer.innerHTML = '';
+}
 
 let userInput = null;
 
@@ -33,7 +33,7 @@ function getUserInput() {
     if (userInput === null) {
       return null;
     }
-    
+
     userInput = parseFloat(userInput);
 
     if (userInput <= 0 ||
@@ -46,10 +46,6 @@ function getUserInput() {
       newGrid(Math.floor(userInput));
     }
   }
-}
-
-function clearGrid() {
-  divContainer.innerHTML = '';
 }
 
 function newGrid(userInput) {
@@ -67,9 +63,3 @@ function newGrid(userInput) {
     cell.style.flex = '1 1 '+ gridSplit + '%';
   }
 }
-
-// Declare function to reset drawing board and create new customGrid()
-//   Remove all existing grid divs in the div container
-//   Ask for userInput for new grid size
-//     Check for maximum grid size of 100x100
-//     Re-create all new divs using createGrid function with custom input
