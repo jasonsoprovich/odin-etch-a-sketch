@@ -24,6 +24,9 @@ body {
 .divGrid {
   box-sizing: border-box;
   aspect-ratio: 1;
+  border: solid;
+  border-width: 0.5px;
+  border-color: RGB(15, 15, 15, 5%);
 }
 
 .gridButton {
@@ -33,4 +36,5 @@ body {
   border: none;
   padding: 10px;
   width: 960px;
+  font-size: 1.25em;
 }
