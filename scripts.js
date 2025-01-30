@@ -10,7 +10,7 @@ function createGrid() {
   const divGrid = document.createElement('div');
   divGrid.className = 'divGrid';
   divGrid.addEventListener('mouseover', () => {
-    divGrid.style.backgroundColor = 'pink';
+    divGrid.style.backgroundColor = 'rgb(35, 148, 131)';
   });
   divContainer.appendChild(divGrid);
 }
