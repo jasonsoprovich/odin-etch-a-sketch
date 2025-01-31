@@ -14,6 +14,7 @@ function createGrid() {
   divGrid.className = 'divGrid';
   divGrid.addEventListener('mouseover', () => {
     divGrid.style.backgroundColor = 'rgb(35, 148, 131)';
+    divGrid.style.opacity = (parseFloat(divGrid.style.opacity) || 0) + 0.1;
   });
   divContainer.appendChild(divGrid);
 }
